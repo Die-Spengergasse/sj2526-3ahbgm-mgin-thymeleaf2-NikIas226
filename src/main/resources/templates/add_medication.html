@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>add new Medication</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Add Medication</h2>
+        <form th:action="@{/medication/add}" th:object="${medication}" method="post">
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" th:field="*{name}" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="dosage">Dosage</label>
+                <input type="number" id ="dosage"  th:field="*{dosage}" class="form-control" min="0">
+            </div>
+            <div class="form-group">
+                <label for="expirationDate">Expiration Date</label>
+                <input type="date" id="expirationDate" th:field="*{expirationDate}" class="form-control" th:attr="min=${#dates.format(#dates.createNow(), 'yyyy-MM-dd')}">
+            </div>
+            <button type="submit" class="btn btn-primary" value="save">Save</button>
+            <a href="/medication/list" class="btn btn-default form control">Cancel</a>
+        </form>
+    </div>
+</body>
+</html>

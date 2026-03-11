@@ -16,6 +16,7 @@
         </thead>
         <tbody>
             <tr th:each="p : ${patients}">
+                <td th:text="${p.id}"></td>
                 <td th:text="${p.name}"></td>
                 <td th:text="${p.birth}"></td>
             </tr>

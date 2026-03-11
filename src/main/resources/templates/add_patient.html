@@ -9,7 +9,7 @@
     <div class="container">
         <form th:action="@{/patient/add}" th:object="${patient}" method="post">
             <input type="text" th:field="*{name}" class="form-control" placeholder="patient name">
-            birth date <input type="date" th:field="*{birth}" class="form-control">
+            <input type="date" th:field="*{birth}" class="form-control">
             <input type="submit" class="form-control" value="Save">
         </form>
     </div>
